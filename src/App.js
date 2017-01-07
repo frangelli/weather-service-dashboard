@@ -14,7 +14,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props.chanceOfRainData);
     return (
       <div className="container">
         <div className="row">
