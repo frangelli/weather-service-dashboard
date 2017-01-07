@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 import Slider from './components/slider';
 import AmountRainChart from './components/amount_rain_chart';
+import ChanceOfRainChart from './components/chance_of_rain_chart';
 
 class App extends React.Component {
 
@@ -13,6 +14,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.props.chanceOfRainData);
     return (
       <div className="container">
         <div className="row">
@@ -20,7 +22,7 @@ class App extends React.Component {
             <Slider title="Pressure [hPa]" onChange={this.props.changePressure} minValue="970" maxValue="1030" value={this.props.pressure}/>
           </div>
           <div className="col-sm-6 dashboard-widget">
-            {this.props.pressure}
+            <ChanceOfRainChart chartData={this.props.chanceOfRainData} />
           </div>
         </div>
         <div className="row">
@@ -41,7 +43,8 @@ function mapStateToProps(state) {
   return {
     rainData: state.rainData,
     pressure: state.pressure,
-    temperature: state.temperature
+    temperature: state.temperature,
+    chanceOfRainData: state.chanceOfRainData
   };
 }
 
