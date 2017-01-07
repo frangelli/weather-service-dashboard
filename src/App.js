@@ -18,19 +18,30 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-6 dashboard-widget">
-            <Slider title="Pressure [hPa]" onChange={this.props.changePressure} minValue="970" maxValue="1030" value={this.props.pressure}/>
+          <h1 className="dashboard-title">Weather Service Dashboard</h1>
+        </div>
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="well dashboard-widget">
+              <Slider title="Pressure [hPa]" onChange={this.props.changePressure} minValue="970" maxValue="1030" value={this.props.pressure}/>
+            </div>
           </div>
-          <div className="col-sm-6 dashboard-widget">
-            <ChanceOfRainChart chartData={this.props.chanceOfRainData} />
+          <div className="col-sm-6">
+            <div className="dashboard-widget">
+              <ChanceOfRainChart chartData={this.props.chanceOfRainData} />
+            </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-6 dashboard-widget">
-            <Slider title="Temperature [C°]" onChange={this.props.changeTemperature} minValue="10" maxValue="35" value={this.props.temperature}/>
+          <div className="col-sm-6">
+            <div className="well dashboard-widget">
+              <Slider title="Temperature [C°]" onChange={this.props.changeTemperature} minValue="10" maxValue="35" value={this.props.temperature}/>
+            </div>
           </div>
-          <div className="col-sm-6 dashboard-widget">
-            <AmountRainChart chartData={this.props.rainData} />
+          <div className="col-sm-6">
+            <div className="dashboard-widget">
+              <AmountRainChart chartData={this.props.rainData} />
+            </div>
           </div>
         </div>
       </div>
