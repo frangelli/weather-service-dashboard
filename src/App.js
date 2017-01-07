@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 import Slider from './components/slider';
+import AmountRainChart from './components/amount_rain_chart';
 
 class App extends React.Component {
 
@@ -27,7 +28,7 @@ class App extends React.Component {
             <Slider title="Temperature [C°]" onChange={this.props.changeTemperature} minValue="10" maxValue="35" value={this.props.temperature}/>
           </div>
           <div className="col-sm-6 dashboard-widget">
-            {this.props.temperature}
+            <AmountRainChart chartData={this.props.rainData} />
           </div>
         </div>
       </div>
